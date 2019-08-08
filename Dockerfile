@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 ADD . /app
 
+COPY turn_server_cert.pem /etc/ssl/turn_server_cert.pem
+COPY turn_server_pkey.pem /etc/ssl/turn_server_pkey.pem
+
 EXPOSE 3478
 
 RUN apt-get update && apt-get install -y \
